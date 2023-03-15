@@ -18,8 +18,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      *
      * @var string[]
      */
+    public $connection = 'mysql';
+    protected $table = 'test';
     protected $fillable = [
-        'name', 'email',
+        'id', 'name',
     ];
 
     /**
@@ -27,7 +29,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      *
      * @var string[]
      */
-    protected $hidden = [
-        'password',
-    ];
+    // protected $hidden = [
+    //     'password',
+    // ];
 }

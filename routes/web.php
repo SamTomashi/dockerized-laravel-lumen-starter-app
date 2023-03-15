@@ -13,15 +13,17 @@
 |
 */
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 
 $router->get('/', function () use ($router) {
 
     try {
       //   $dbconnect = DB::connection()->getPDO();
-         $dbname = app('db')->connection('sqlsrv')->getDatabaseName();
+         // $dbname = app('db')->connection('sqlsrv')->getDatabaseName();
       //   $dbname = DB::connection()->getDatabaseName();
-        return "Connected successfully to the database. Database name is :".$dbname;
+      $user = User::all();
+      return response()->json($user);;
      } catch(Exception $e) {
         return "Error in connecting to the database".$e;
      }
