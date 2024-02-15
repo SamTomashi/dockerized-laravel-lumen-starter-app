@@ -2,7 +2,11 @@ FROM php:8.1-fpm-alpine
 
 ENV ACCEPT_EULA=Y
 
-RUN docker-php-ext-install pdo_mysql
+RUN apk update && \
+    apk add --no-cache autoconf freetds freetds-dev unixodbc unixodbc-dev build-base && \
+    apk add --no-cache unixodbc unixodbc-dev && \
+    docker-php-ext-install pdo_mysql && \
+    apk del build-base
 
 WORKDIR /var/www/html/
 
