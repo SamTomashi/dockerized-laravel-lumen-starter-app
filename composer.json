@@ -6,6 +6,10 @@
     "type": "project",
     "require": {
         "php": "^8.1",
+        "doctrine/annotations": "^2.0",
+        "doctrine/dbal": "^3.8",
+        "doctrine/deprecations": "*",
+        "doctrine/orm": "^3.0",
         "laravel/lumen-framework": "^10.0"
     },
     "require-dev": {
