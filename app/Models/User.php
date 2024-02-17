@@ -18,11 +18,24 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      *
      * @var string[]
      */
-    // public $connection = 'mysql';
-    // protected $table = 'test';
-    // protected $fillable = [
-    //     'id', 'name',
-    // ];
+    public $connection = 'mysql';
+    protected $table = 'custuser';
+    protected $fillable = [
+        "custcode",
+        "usercode",
+        "group_id",
+        "username",
+        "active",
+        "password",
+        "useremail",
+        "erpusercode",
+        "created_at",
+        "updated_at",
+        "token",
+        "last_login",
+        "current_otp",
+        "otp_expiry_time"
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
